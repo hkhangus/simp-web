@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9a9e"/>
+      <stop offset="100%" style="stop-color:#fecfef"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg2)" rx="16"/>
+  <text x="200" y="180" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#c9184a" opacity="0.7">Your Photo Here</text>
+  <text x="200" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#c9184a" opacity="0.5">The Day We Met</text>
+  <!-- Heart icon -->
+  <path d="M200 260 C200 250, 190 240, 180 240 C165 240, 155 255, 155 268 C155 290, 180 310, 200 325 C220 310, 245 290, 245 268 C245 255, 235 240, 220 240 C210 240, 200 250, 200 260 Z" fill="#e63946" opacity="0.3"/>
+</svg>

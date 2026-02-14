@@ -1,0 +1,238 @@
+/* === Content visibility transitions === */
+
+/* All screen content starts hidden */
+.screen-content {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Visible state */
+.screen.screen-visible .screen-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Screen 1 always visible on load */
+.screen-1 .screen-content {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Title glow animation === */
+.screen-1 .title {
+  animation: romanticGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes romanticGlow {
+  0% {
+    text-shadow:
+      0 0 20px rgba(255, 100, 150, 0.4),
+      0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    text-shadow:
+      0 0 40px rgba(255, 100, 150, 0.8),
+      0 0 80px rgba(255, 100, 150, 0.3),
+      0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* === Memory image slide-in === */
+.memory-image {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+}
+
+.memory-card.reverse .memory-image {
+  transform: translateX(40px);
+}
+
+.screen.screen-visible .memory-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* === Memory text fade-in === */
+.memory-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s;
+}
+
+.screen.screen-visible .memory-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Screen 5 heart entrance === */
+.heart-container {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 1s ease-out 0.2s, transform 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s;
+}
+
+.screen-5.screen-visible .heart-container {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.final-message {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out 0.8s, transform 0.8s ease-out 0.8s;
+}
+
+.screen-5.screen-visible .final-message {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.final-sub {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out 1.1s, transform 0.8s ease-out 1.1s;
+}
+
+.screen-5.screen-visible .final-sub {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Falling petal particles === */
+.petal {
+  position: absolute;
+  top: -20px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(ellipse at center, #ffb6c1, #ff69b4);
+  border-radius: 50% 0 50% 50%;
+  opacity: 0;
+  pointer-events: none;
+  animation: petalFall var(--fall-duration, 6s) linear var(--fall-delay, 0s) infinite;
+}
+
+.petal:nth-child(odd) {
+  background: radial-gradient(ellipse at center, #ffc0cb, #ff85a2);
+  border-radius: 0 50% 50% 50%;
+  width: 10px;
+  height: 14px;
+}
+
+@keyframes petalFall {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg) scale(0.8);
+  }
+  10% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--drift, 60px), 105vh) rotate(720deg) scale(0.3);
+  }
+}
+
+/* === Shooting stars / Meteors === */
+.meteor-shower {
+  position: fixed;
+  inset: 0;
+  bottom: 40%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.meteor {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transform: rotate(-35deg);
+}
+
+/* Glowing tail */
+.meteor::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 1.5px;
+  background: linear-gradient(to left, #fff, rgba(255,255,255,0.6), transparent);
+  border-radius: 2px;
+  transform: translateX(-100%);
+}
+
+.meteor-1 {
+  top: 8%;  left: 25%;
+  animation: meteorShoot 6s linear 1s infinite;
+}
+.meteor-2 {
+  top: 15%; left: 60%;
+  animation: meteorShoot 8s linear 4s infinite;
+}
+.meteor-3 {
+  top: 5%;  left: 80%;
+  animation: meteorShoot 7s linear 7s infinite;
+}
+.meteor-4 {
+  top: 22%; left: 40%;
+  animation: meteorShoot 9s linear 11s infinite;
+}
+.meteor-5 {
+  top: 12%; left: 10%;
+  animation: meteorShoot 7.5s linear 15s infinite;
+}
+
+@keyframes meteorShoot {
+  0% {
+    opacity: 0;
+    transform: rotate(-35deg) translateX(0);
+  }
+  2% {
+    opacity: 1;
+  }
+  8% {
+    opacity: 1;
+    transform: rotate(-35deg) translateX(300px);
+  }
+  10% {
+    opacity: 0;
+    transform: rotate(-35deg) translateX(400px);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-35deg) translateX(400px);
+  }
+}
+
+/* Subtle entrance for grass overlay */
+.flower-bed::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 25px;
+  background: linear-gradient(to top, rgba(59, 24, 84, 0.3), transparent);
+  pointer-events: none;
+}

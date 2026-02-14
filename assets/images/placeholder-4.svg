@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffecd2"/>
+      <stop offset="100%" style="stop-color:#fcb69f"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg4)" rx="16"/>
+  <text x="200" y="180" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#bf360c" opacity="0.7">Your Photo Here</text>
+  <text x="200" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#bf360c" opacity="0.5">The Little Things</text>
+  <!-- Flower icon -->
+  <circle cx="200" cy="290" r="8" fill="#ff7043" opacity="0.3"/>
+  <circle cx="188" cy="282" r="8" fill="#ff8a65" opacity="0.25"/>
+  <circle cx="212" cy="282" r="8" fill="#ff8a65" opacity="0.25"/>
+  <circle cx="188" cy="298" r="8" fill="#ff8a65" opacity="0.25"/>
+  <circle cx="212" cy="298" r="8" fill="#ff8a65" opacity="0.25"/>
+  <circle cx="200" cy="290" r="5" fill="#ffcc80" opacity="0.4"/>
+</svg>

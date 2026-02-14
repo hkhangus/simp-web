@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="bg5" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#ff9eb5"/>
+      <stop offset="50%" style="stop-color:#e86488"/>
+      <stop offset="100%" style="stop-color:#9b2348"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg5)"/>
+  <!-- Decorative sparkles -->
+  <circle cx="80" cy="80" r="2" fill="#fff" opacity="0.6"/>
+  <circle cx="320" cy="100" r="1.5" fill="#fff" opacity="0.5"/>
+  <circle cx="150" cy="300" r="2" fill="#fff" opacity="0.4"/>
+  <circle cx="300" cy="280" r="1.5" fill="#fff" opacity="0.5"/>
+  <circle cx="200" cy="60" r="1" fill="#fff" opacity="0.3"/>
+  <text x="200" y="185" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#fff" opacity="0.8">Your Photo</text>
+  <text x="200" y="215" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#fff" opacity="0.6">Together</text>
+  <!-- Small hearts -->
+  <path d="M180 260 C180 252, 172 245, 165 245 C155 245, 148 255, 148 265 C148 282, 170 295, 180 305 C190 295, 212 282, 212 265 C212 255, 205 245, 195 245 C188 245, 180 252, 180 260 Z" fill="#fff" opacity="0.25"/>
+  <path d="M220 250 C220 244, 214 239, 209 239 C202 239, 197 246, 197 253 C197 265, 213 274, 220 281 C227 274, 243 265, 243 253 C243 246, 238 239, 231 239 C226 239, 220 244, 220 250 Z" fill="#fff" opacity="0.2"/>
+</svg>

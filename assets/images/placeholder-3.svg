@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a18cd1"/>
+      <stop offset="100%" style="stop-color:#fbc2eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg3)" rx="16"/>
+  <text x="200" y="180" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#6a1b9a" opacity="0.7">Your Photo Here</text>
+  <text x="200" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#6a1b9a" opacity="0.5">Our Adventures</text>
+  <!-- Star icon -->
+  <polygon points="200,250 208,275 235,275 213,290 221,315 200,300 179,315 187,290 165,275 192,275" fill="#7b1fa2" opacity="0.25"/>
+</svg>

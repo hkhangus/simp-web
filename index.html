@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You, With All My Heart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/flowers.css">
+  <link rel="stylesheet" href="css/heart.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <!-- Heart clip-path (scales via objectBoundingBox) -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <clipPath id="heartClip" clipPathUnits="objectBoundingBox">
+        <path d="M 0.5,0.18 C 0.5,0.08 0.4,0 0.28,0 C 0.1,0 0,0.16 0,0.35 C 0,0.6 0.22,0.8 0.5,1 C 0.78,0.8 1,0.6 1,0.35 C 1,0.16 0.9,0 0.72,0 C 0.6,0 0.5,0.08 0.5,0.18 Z"/>
+      </clipPath>
+    </defs>
+  </svg>
+
+  <!-- Splash screen — click to enter + start music -->
+  <div class="splash-screen" id="splashScreen">
+    <div class="splash-content">
+      <h1 class="splash-title">For You</h1>
+      <p class="splash-sub">A little something from my heart</p>
+      <button class="splash-btn" id="splashBtn">Open My Heart</button>
+    </div>
+  </div>
+
+  <!-- Fixed background layers -->
+  <div class="ground-layer"></div>
+  <!-- Shooting stars -->
+  <div class="meteor-shower">
+    <div class="meteor meteor-1"></div>
+    <div class="meteor meteor-2"></div>
+    <div class="meteor meteor-3"></div>
+    <div class="meteor meteor-4"></div>
+    <div class="meteor meteor-5"></div>
+  </div>
+  <div class="flower-bed" id="flowerBed"></div>
+  <div class="petal-container" id="petalContainer"></div>
+
+  <!-- Scroll container -->
+  <div class="scroll-container" id="scrollContainer">
+
+    <!-- Screen 1: Title -->
+    <section class="screen screen-1" id="screen1">
+      <div class="screen-content">
+        <h1 class="title">Every Moment With You</h1>
+        <p class="subtitle">is a memory I treasure forever</p>
+        <div class="scroll-hint">
+          <span>Scroll down</span>
+          <div class="scroll-arrow"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 2: Memory 1 -->
+    <section class="screen screen-2" id="screen2">
+      <div class="screen-content">
+        <div class="memory-card">
+          <div class="memory-image">
+            <img src="assets/images/placeholder-2.svg" alt="Our memory">
+          </div>
+          <div class="memory-text">
+            <h2>The Day We Met</h2>
+            <p>From the very first moment, I knew there was something special about you. Your smile lit up the room and my heart hasn't stopped racing since.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 3: Memory 2 -->
+    <section class="screen screen-3" id="screen3">
+      <div class="screen-content">
+        <div class="memory-card reverse">
+          <div class="memory-image">
+            <img src="assets/images/placeholder-3.svg" alt="Our memory">
+          </div>
+          <div class="memory-text">
+            <h2>Our Adventures</h2>
+            <p>Every adventure with you turns into the most beautiful story. Whether it's a quiet walk or a grand journey, being with you makes everything magical.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 4: Memory 3 -->
+    <section class="screen screen-4" id="screen4">
+      <div class="screen-content">
+        <div class="memory-card">
+          <div class="memory-image">
+            <img src="assets/images/placeholder-4.svg" alt="Our memory">
+          </div>
+          <div class="memory-text">
+            <h2>The Little Things</h2>
+            <p>It's the way you laugh, the way you hold my hand, the way you look at me — these little moments mean everything to me.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 5: Heart + Final -->
+    <section class="screen screen-5" id="screen5">
+      <div class="screen-content">
+        <div class="heart-container">
+          <div class="heart-glow"></div>
+          <!-- Heart-shaped ripple rings -->
+          <svg class="heart-ripple ripple-1" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50,18 C50,8 40,0 28,0 C10,0 0,16 0,35 C0,60 22,80 50,100 C78,80 100,60 100,35 C100,16 90,0 72,0 C60,0 50,8 50,18 Z" stroke="rgba(255,100,150,0.6)" stroke-width="1.5" fill="none"/>
+          </svg>
+          <svg class="heart-ripple ripple-2" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50,18 C50,8 40,0 28,0 C10,0 0,16 0,35 C0,60 22,80 50,100 C78,80 100,60 100,35 C100,16 90,0 72,0 C60,0 50,8 50,18 Z" stroke="rgba(255,100,150,0.6)" stroke-width="1.5" fill="none"/>
+          </svg>
+          <svg class="heart-ripple ripple-3" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50,18 C50,8 40,0 28,0 C10,0 0,16 0,35 C0,60 22,80 50,100 C78,80 100,60 100,35 C100,16 90,0 72,0 C60,0 50,8 50,18 Z" stroke="rgba(255,100,150,0.6)" stroke-width="1.5" fill="none"/>
+          </svg>
+          <!-- Floating sparkles -->
+          <div class="heart-sparkles" id="heartSparkles"></div>
+          <div class="heart">
+            <div class="heart-border"></div>
+            <div class="heart-photo">
+              <img src="assets/images/placeholder-5.svg" alt="Us">
+            </div>
+          </div>
+        </div>
+        <h2 class="final-message">I Love You</h2>
+        <p class="final-sub">Happy Valentine's Day</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Music toggle -->
+  <button class="music-btn" id="musicBtn" aria-label="Toggle music">
+    <svg class="music-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M9 18V5l12-2v13"/>
+      <circle cx="6" cy="18" r="3"/>
+      <circle cx="18" cy="16" r="3"/>
+    </svg>
+    <svg class="music-icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M9 18V5l12-2v13"/>
+      <circle cx="6" cy="18" r="3"/>
+      <circle cx="18" cy="16" r="3"/>
+      <line x1="1" y1="1" x2="23" y2="23" stroke-width="3"/>
+    </svg>
+  </button>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music/background.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="js/flowers.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

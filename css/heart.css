@@ -1,0 +1,177 @@
+/* === Heart container === */
+.heart-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  width: clamp(240px, 38vw, 320px);
+  height: clamp(240px, 38vw, 320px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === Glowing aura — synced with heartbeat === */
+.heart-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160%;
+  height: 160%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 50, 90, 0.45) 0%,
+    rgba(255, 50, 90, 0.15) 35%,
+    rgba(200, 40, 80, 0.05) 55%,
+    transparent 70%
+  );
+  animation: glowPulse 1.6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes glowPulse {
+  0%   { transform: translate(-50%, -50%) scale(1);    opacity: 0.4; }
+  14%  { transform: translate(-50%, -50%) scale(1.25);  opacity: 1; }
+  24%  { transform: translate(-50%, -50%) scale(1.05);  opacity: 0.6; }
+  34%  { transform: translate(-50%, -50%) scale(1.18);  opacity: 0.9; }
+  44%  { transform: translate(-50%, -50%) scale(1);    opacity: 0.4; }
+  100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.4; }
+}
+
+/* === Heart-shaped ripple rings === */
+.heart-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  animation: rippleExpand 1.6s ease-out infinite;
+  overflow: visible;
+}
+
+.ripple-2 {
+  animation-delay: 0.2s;
+}
+
+.ripple-3 {
+  animation-delay: 0.4s;
+}
+
+@keyframes rippleExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.7);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.3);
+    opacity: 0;
+  }
+}
+
+/* === Floating sparkles container === */
+.heart-sparkles {
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 6px 2px rgba(255, 150, 200, 0.8), 0 0 12px 4px rgba(255, 100, 150, 0.4);
+  opacity: 0;
+  animation: sparkleFloat var(--sparkle-duration, 3s) ease-in-out var(--sparkle-delay, 0s) infinite;
+}
+
+@keyframes sparkleFloat {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(var(--sx, 10px), var(--sy, -10px)) scale(1);
+  }
+  80% {
+    opacity: 0.6;
+    transform: translate(var(--ex, 30px), var(--ey, -60px)) scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--ex, 30px), calc(var(--ey, -60px) - 20px)) scale(0);
+  }
+}
+
+/* === Heart wrapper — sizing + beat animation === */
+.heart {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: heartBeat 1.6s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* === Pink/red border layer behind the photo === */
+.heart-border {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #ff6b8a, #e63956, #c9184a);
+  clip-path: url(#heartClip);
+  -webkit-clip-path: url(#heartClip);
+  z-index: 1;
+  /* Shimmer on the border */
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* === Photo clipped to heart, inset to show border === */
+.heart-photo {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  clip-path: url(#heartClip);
+  -webkit-clip-path: url(#heartClip);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.heart-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* === Double-beat animation (lub-dub) with shadow flash === */
+@keyframes heartBeat {
+  0%   { transform: scale(1);    filter: drop-shadow(0 0 0px transparent); }
+  14%  { transform: scale(1.12);  filter: drop-shadow(0 0 25px rgba(255, 60, 100, 0.7)); }
+  24%  { transform: scale(1);    filter: drop-shadow(0 0 5px rgba(255, 60, 100, 0.2)); }
+  34%  { transform: scale(1.08);  filter: drop-shadow(0 0 18px rgba(255, 60, 100, 0.5)); }
+  44%  { transform: scale(1);    filter: drop-shadow(0 0 0px transparent); }
+  100% { transform: scale(1);    filter: drop-shadow(0 0 0px transparent); }
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+  .heart-container {
+    width: 220px;
+    height: 220px;
+  }
+}
